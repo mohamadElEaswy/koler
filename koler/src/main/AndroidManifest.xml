@@ -45,6 +45,16 @@
         android:theme="@style/ChoolooTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
+        <!-- Declare this app as a dialer -->
+        <meta-data
+            android:name="android.telecom.INCLUDE_SELF_MANAGED_CALLS"
+            android:value="true" />
+
+        <!-- Role declaration for dialer app -->
+        <meta-data
+            android:name="android.app.role.DIALER"
+            android:value="true" />
+
         <activity
             android:name=".ui.activity.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
