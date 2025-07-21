@@ -13,6 +13,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.chooloo.www.chooloolib.ui.view.ContactsView
 import com.chooloo.www.chooloolib.ui.view.DialerView
 import com.chooloo.www.chooloolib.ui.view.RecentsView
+import com.chooloo.www.chooloolib.ui.view.SmsView
+import com.chooloo.www.chooloolib.ui.viewmodel.sms.SmsViewModelImpl
 import com.chooloo.www.koler.viewmodel.main.MainViewModelImpl
 
 @Composable
@@ -50,24 +52,10 @@ fun RecentsScreen(
 }
 
 @Composable
-fun MessagesScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = "الرسائل",
-            style = MaterialTheme.typography.headlineMedium,
-            textAlign = TextAlign.Center
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "قريباً - وظيفة الرسائل",
-            style = MaterialTheme.typography.bodyLarge,
-            textAlign = TextAlign.Center
-        )
-    }
+fun MessagesScreen(
+    smsViewModel: SmsViewModelImpl = hiltViewModel()
+) {
+    SmsView(
+        smsViewModel = smsViewModel
+    )
 }

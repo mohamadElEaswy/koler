@@ -50,6 +50,8 @@ import com.chooloo.www.chooloolib.domain.repository.recent.RecentRepository
 import com.chooloo.www.chooloolib.domain.repository.recent.RecentRepositoryImpl
 import com.chooloo.www.chooloolib.domain.repository.sim.SimRepository
 import com.chooloo.www.chooloolib.domain.repository.sim.SimRepositoryImpl
+import com.chooloo.www.chooloolib.domain.repository.sms.SmsRepository
+import com.chooloo.www.chooloolib.domain.repository.sms.SmsRepositoryImpl
 import com.chooloo.www.chooloolib.domain.repository.telecom.TelecomRepository
 import com.chooloo.www.chooloolib.domain.repository.telecom.TelecomRepositoryImpl
 import com.chooloo.www.chooloolib.domain.repository.theme.ThemeRepository
@@ -141,6 +143,9 @@ object ApplicationProvidesModule {
 abstract class ApplicationBindsModule {
     @Binds
     abstract fun bindSimRepository(impl: SimRepositoryImpl): SimRepository
+
+    @Binds
+    abstract fun bindSmsRepository(impl: SmsRepositoryImpl): SmsRepository
 
     @Binds
     abstract fun bindCallRepository(impl: CallRepositoryImpl): CallRepository
