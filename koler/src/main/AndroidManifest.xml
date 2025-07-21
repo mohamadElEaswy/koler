@@ -66,5 +66,12 @@
                 <data android:scheme="tel" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.compose.activity.HomeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+        </activity>
     </application>
 </manifest>

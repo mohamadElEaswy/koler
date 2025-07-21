@@ -43,7 +43,7 @@ class RecentsContentResolver(
             id = cursor.getLong(cursor.getColumnIndex(CallLog.Calls._ID)),
             type = cursor.getInt(cursor.getColumnIndex(CallLog.Calls.TYPE)),
             date = Date(cursor.getLong(cursor.getColumnIndex(CallLog.Calls.DATE))),
-            number = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER)),
+            number = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER)) ?: "",
             duration = cursor.getLong(cursor.getColumnIndex(CallLog.Calls.DURATION)),
             cachedName = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
         )
